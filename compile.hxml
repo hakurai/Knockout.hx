@@ -1,4 +1,4 @@
--js bin/js/App.js
+-js bin/App.js
 -main knockout.Main
 -cp src
 --dead-code-elimination

@@ -4,6 +4,10 @@ class Main {
 // test
     public static function main() {
         var observable = Knockout.observable("hello");
-        var value = observable.get();
+        var value = observable.value();
+        
+        Observable.fn.newMethod = function(){
+            return 100;
+        };
     }
 }

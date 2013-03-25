@@ -1,8 +1,9 @@
 package knockout;
+@:native("ko.subscribable")
 extern
 class Subscribable<T> {
 
-    public function new(?value:T):Void;
+    public static var fn:Dynamic;
 
     public function extend(source:Dynamic):Subscribable<T>;
 

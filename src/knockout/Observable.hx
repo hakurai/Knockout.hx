@@ -1,19 +1,20 @@
 package knockout;
 import knockout.Subscribable;
+@:native("ko.observable")
 extern
 class Observable<T> extends Subscribable<T> {
 
-    public function new(?value:T):Void;
+    public static var fn:Dynamic;
 
     inline private function self():Void -> T untyped {
         return this;
     }
 
-    inline public function get():T {
+    inline public function value():Null<T> {
         return self()();
     }
 
-    public function peek():T;
+    public function peek():Null<T>;
 
     public function valueHasMutated():Void;
 
