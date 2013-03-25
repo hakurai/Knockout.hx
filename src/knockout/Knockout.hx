@@ -1,12 +1,17 @@
 package knockout;
 
+import knockout.dependentObservable;
 import knockout.ObservableArray;
 import knockout.Observable;
 @:native("ko")
 extern
 class Knockout<T> {
 
-    static public function observable<T>(?value:T):Observable<T>;
+    public static var extenders:Dynamic;
 
-    static public function observableArray<T>(value:Array<T>):ObservableArray<T>;
+    public static function observable<T>(?value:T):Observable<T>;
+
+    public static function observableArray<T>(value:Array<T>):ObservableArray<T>;
+
+    public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):dependentObservable<T>;
 }
