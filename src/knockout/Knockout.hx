@@ -1,6 +1,6 @@
 package knockout;
 
-import knockout.dependentObservable;
+import knockout.DependentObservable;
 import knockout.ObservableArray;
 import knockout.Observable;
 @:native("ko")
@@ -13,5 +13,5 @@ class Knockout<T> {
 
     public static function observableArray<T>(value:Array<T>):ObservableArray<T>;
 
-    public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):dependentObservable<T>;
+    public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
 }

@@ -1,7 +1,8 @@
 package knockout;
+import knockout.Subscribable;
 @:native("ko.computed")
 extern
-class dependentObservable extends Subscribable{
+class DependentObservable<T> extends Subscribable<T>{
 
     public static var fn:Dynamic;
 
