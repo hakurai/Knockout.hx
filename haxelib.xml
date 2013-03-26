@@ -1,0 +1,8 @@
+<project name="Knockout.hx" url="https://github.com/hakurai/Knockout.hx" license="MIT">
+    <user name="hakurai"/>
+    <tag v="js"/>
+    <tag v="javascript"/>
+    <tag v="extern"/>
+    <description>Knockout extern</description>
+    <version name="2.0.0">Initial release</version>
+</project>
