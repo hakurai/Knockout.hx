@@ -1,4 +1,5 @@
 package knockout;
+import knockout.Subscribable;
 @:native("ko.observable")
 extern
 class Observable<T> extends Subscribable<T> {

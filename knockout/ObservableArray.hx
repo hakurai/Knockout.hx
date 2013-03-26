@@ -1,4 +1,5 @@
 package knockout;
+import knockout.Observable;
 @:native("ko.observableArray")
 extern
 class ObservableArray<T> extends Observable<Array<T>>{
