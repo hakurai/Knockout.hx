@@ -1,8 +1,5 @@
 package knockout;
 
-import knockout.DependentObservable;
-import knockout.ObservableArray;
-import knockout.Observable;
 @:native("ko")
 extern
 class Knockout<T> {

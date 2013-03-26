@@ -1,5 +1,4 @@
 package knockout;
-import knockout.Subscribable;
 @:native("ko.computed")
 extern
 class DependentObservable<T> extends Subscribable<T>{

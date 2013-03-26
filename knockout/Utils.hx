@@ -1,5 +1,4 @@
 package knockout;
-import knockout.Subscribable;
 @:native("ko.utils")
 extern
 class Utils {
