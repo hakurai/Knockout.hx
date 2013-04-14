@@ -9,6 +9,8 @@ class Knockout<T> {
 
     public static var extenders:Dynamic;
 
+    public static var bindingHandlers:Dynamic;
+
     public static function observable<T>(?value:T):Observable<T>;
 
     public static function observableArray<T>(value:Array<T>):ObservableArray<T>;
