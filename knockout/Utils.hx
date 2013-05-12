@@ -16,8 +16,10 @@ class Utils {
 
     public static function arrayMap<T1,T2>(array:Array<T1>, mapping:T1 -> T2):Array<T2>;
 
+    @:overload(function<T>(observableArray:ObservableArray<T>, valuesToPush:Array<T>):Array<T>{})
     public static function arrayPushAll<T>(array:Array<T>, valuesToPush:Array<T>):Array<T>;
 
+    @:overload(function<T>(observableArray:ObservableArray<T>, itemToRemove:T):Void{})
     public static function arrayRemoveItem<T>(array:Array<T>, itemToRemove:T):Void;
 
     public static function extend(target:Dynamic, source:Dynamic):Void;
