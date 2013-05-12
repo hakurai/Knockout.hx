@@ -15,13 +15,13 @@ class Knockout {
 
     public static function observable<T>(?value:T):Observable<T>;
 
-    public static function observableArray<T>(value:Array<T>):ObservableArray<T>;
+    public static function observableArray<T>(?value:Array<T>):ObservableArray<T>;
 
     public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
 }
 
 typedef BindingHandler = {
-    @:optional function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    @:optional function init(?element:HtmlDom, ?valueAccessor:Void -> Dynamic, ?allBindingsAccessor:Void -> Dynamic, ?viewModel:Dynamic, ?bindingContext:BindingContext):Void;
 
-    @:optional function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    @:optional function update(?element:HtmlDom, ?valueAccessor:Void -> Dynamic, ?allBindingsAccessor:Void -> Dynamic, ?viewModel:Dynamic, ?bindingContext:BindingContext):Void;
 }
