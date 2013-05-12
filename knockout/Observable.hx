@@ -6,12 +6,20 @@ class Observable<T> extends Subscribable<T> {
 
     public static var fn:Dynamic;
 
-    inline private function self():Void -> T untyped {
+    inline private function setter():T -> Void untyped {
         return this;
     }
 
-    inline public function value():Null<T> {
-        return self()();
+    inline private function getter():Void -> T untyped {
+        return this;
+    }
+
+    inline public function setValue(newValue:T):Void {
+        return setter()(newValue);
+    }
+
+    inline public function getValue():Null<T> {
+        return getter()();
     }
 
     public function peek():Null<T>;
