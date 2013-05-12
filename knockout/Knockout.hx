@@ -21,7 +21,7 @@ class Knockout {
 }
 
 typedef BindingHandler = {
-    @:optional function init(?element:HtmlDom, ?valueAccessor:Void -> Dynamic, ?allBindingsAccessor:Void -> Dynamic, ?viewModel:Dynamic, ?bindingContext:BindingContext):Void;
+    @:optional function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 
-    @:optional function update(?element:HtmlDom, ?valueAccessor:Void -> Dynamic, ?allBindingsAccessor:Void -> Dynamic, ?viewModel:Dynamic, ?bindingContext:BindingContext):Void;
+    @:optional function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 }
