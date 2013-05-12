@@ -14,11 +14,11 @@ class Observable<T> extends Subscribable<T> {
         return this;
     }
 
-    inline public function setValue(newValue:T):Void {
+    inline public function set(newValue:T):Void {
         return setter()(newValue);
     }
 
-    inline public function getValue():Null<T> {
+    inline public function get():Null<T> {
         return getter()();
     }
 
