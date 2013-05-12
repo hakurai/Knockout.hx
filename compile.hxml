@@ -1,4 +1,4 @@
 -js bin/App.js
--main knockout.Main
+-main Test
 --dead-code-elimination
 --js-modern

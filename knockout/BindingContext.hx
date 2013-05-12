@@ -12,35 +12,35 @@ class BindingContext {
     public var context(get_context, null):BindingContext;
     public var element(get_element, null):HtmlDom;
 
-    function get_parent():Null<Dynamic> {
+    private inline function get_parent():Null<Dynamic> {
         return untyped __js__("this.$parent");
     }
 
-    private function get_parents():Null<Dynamic> {
+    private inline function get_parents():Null<Dynamic> {
         return untyped __js__("this.$parents");
     }
 
-    private function get_root():Null<Dynamic> {
+    private inline function get_root():Null<Dynamic> {
         return untyped __js__("this.$root");
     }
 
-    private function get_data():Null<Dynamic> {
+    private inline function get_data():Null<Dynamic> {
         return untyped __js__("this.$data");
     }
 
-    private function get_index():Null<Dynamic> {
+    private inline function get_index():Null<Dynamic> {
         return untyped __js__("this.$index");
     }
 
-    private function get_parentContext():Null<Dynamic> {
+    private inline function get_parentContext():Null<Dynamic> {
         return untyped __js__("this.$parentContext");
     }
 
-    private function get_context():Null<Dynamic> {
+    private inline function get_context():Null<Dynamic> {
         return untyped __js__("this.$context");
     }
 
-    private function get_element():Null<Dynamic> {
+    private inline function get_element():Null<Dynamic> {
         return untyped __js__("this.$element");
     }
 }

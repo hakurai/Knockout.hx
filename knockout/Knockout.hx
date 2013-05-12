@@ -11,7 +11,7 @@ class Knockout {
 
     public static var extenders:Dynamic;
 
-    public static var bindingHandlers:Hash<BindingHandler>;
+    public static var bindingHandlers:BindingHandlerMap;
 
     public static function observable<T>(?value:T):Observable<T>;
 
@@ -19,6 +19,18 @@ class Knockout {
 
     public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
 }
+
+class BindingHandlerMap {
+
+    public inline function put(key:String, handler:BindingHandler):Void untyped {
+        this[key] = handler;
+    }
+
+    public inline function get(key:String):BindingHandler untyped {
+        return this[key];
+    }
+}
+
 
 typedef BindingHandler = {
     function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
