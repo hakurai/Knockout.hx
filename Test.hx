@@ -23,20 +23,22 @@ class Test {
         Utils.arrayPushAll(array1, array2);
 
         Knockout.bindingHandlers.put("myHandler", new MyHandler());
+
+        Knockout.applyBindings({prop:observable});
     }
 }
 
-class MyHandler{
+class MyHandler {
 
-    public function new(){
+    public function new() {
 
     }
 
-    public function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void{
+    public function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
         var parent = bindingContext.parent;
     }
 
-    public function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void{
+    public function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
 
     }
 

@@ -18,6 +18,8 @@ class Knockout {
     public static function observableArray<T>(?value:Array<T>):ObservableArray<T>;
 
     public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
+
+    public static function applyBindings(viewModel:Dynamic,?rootNode:HtmlDom):Void;
 }
 
 class BindingHandlerMap {
