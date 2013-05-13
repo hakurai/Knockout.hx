@@ -1,9 +1,9 @@
 package knockout;
 
+import js.html.Element;
 import knockout.DependentObservable;
 import knockout.ObservableArray;
 import knockout.Observable;
-import js.Dom.HtmlDom;
 
 @:native("ko")
 extern
@@ -19,7 +19,7 @@ class Knockout {
 
     public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
 
-    public static function applyBindings(viewModel:Dynamic,?rootNode:HtmlDom):Void;
+    public static function applyBindings(viewModel:Dynamic,?rootNode:Element):Void;
 }
 
 class BindingHandlerMap {
@@ -35,7 +35,7 @@ class BindingHandlerMap {
 
 
 typedef BindingHandler = {
-    function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    function init(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 
-    function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    function update(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 }
