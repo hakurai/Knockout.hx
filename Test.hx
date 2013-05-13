@@ -1,4 +1,4 @@
-import js.Dom.HtmlDom;
+import js.html.Element;
 import knockout.Knockout;
 import knockout.Observable;
 import knockout.Utils;
@@ -34,11 +34,11 @@ class MyHandler {
 
     }
 
-    public function init(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
+    public function init(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
         var parent = bindingContext.parent;
     }
 
-    public function update(element:HtmlDom, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
+    public function update(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void {
 
     }
 

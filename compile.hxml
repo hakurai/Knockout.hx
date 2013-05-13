@@ -1,4 +1,4 @@
 -js bin/App.js
 -main Test
---dead-code-elimination
+-dce full
 --js-modern
