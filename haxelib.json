@@ -1,0 +1,10 @@
+{
+    "name": "knockout.hx",
+    "url": "https://github.com/hakurai/Knockout.hx",
+    "license": "Public",
+    "tags": ["js", "extern", "knockout"],
+    "description": "Knockout extern",
+    "version": "2.0.0",
+    "releasenote": "Initial release",
+    "contributors": ["hakurai"]
+}

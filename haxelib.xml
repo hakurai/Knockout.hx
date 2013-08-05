@@ -1,4 +1,4 @@
-<project name="Knockout.hx" url="https://github.com/hakurai/Knockout.hx" license="MIT">
+<project name="knockout.hx" url="https://github.com/hakurai/Knockout.hx" license="Public">
     <user name="hakurai"/>
     <tag v="js"/>
     <tag v="javascript"/>
