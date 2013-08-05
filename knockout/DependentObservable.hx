@@ -5,6 +5,7 @@ extern
 class DependentObservable<T> extends Subscribable<T>{
 
     public static var fn:Dynamic;
+    public var value(get,set):T;
 
     inline private function setter():T -> Void untyped {
         return this;
@@ -12,6 +13,15 @@ class DependentObservable<T> extends Subscribable<T>{
 
     inline private function getter():Void -> T untyped {
         return this;
+    }
+
+    inline public function set_value(newValue:T):T {
+        setter()(newValue);
+        return newValue;
+    }
+
+    inline public function get_value():Null<T> {
+        return getter()();
     }
 
     inline public function set(newValue:T):Void {

@@ -3,7 +3,7 @@ package knockout;
 extern
 class Subscribable<T> {
 
-    public static var fn:Dynamic;
+    public static var fn(default,null):Dynamic;
 
     public function extend(source:Dynamic):Subscribable<T>;
 

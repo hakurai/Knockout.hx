@@ -4,7 +4,7 @@ import knockout.Observable;
 extern
 class ObservableArray<T> extends Observable<Array<T>>{
 
-    public static var fn:Dynamic;
+    public static var fn(default,null):Dynamic;
 
     public function pop():Null<T>;
 
