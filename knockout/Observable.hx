@@ -10,15 +10,15 @@ abstract Observable<T>(ObservableExtern<T>){
         this = observable;
     }
 
-    @:from static public inline function fromValue(value:T) {
+    @:from inline static public function fromValue(value:T) {
         return new Observable(Knockout.observable(value));
     }
 
-    @:to public inline function toValue():T {
+    @:to inline public function toValue():T {
         return this.getter()();
     }
 
-    @:op(A << B) static public function set<T>(lhs:Observable<T>, rhs:T):Void {
+    @:op(A << B) static inline public function set<T>(lhs:Observable<T>, rhs:T):Void {
         lhs.setValue(rhs);
     }
 

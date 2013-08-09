@@ -1,35 +1,66 @@
 package knockout;
 import knockout.Subscribable;
-@:native("ko.computed")
+
+abstract DependentObservable<T>(DependentObservableExtern<T>){
+
+    public static var fn:Dynamic = DependentObservableFn;
+
+    inline function new(observable:DependentObservableExtern<T>) {
+        this = observable;
+    }
+
+    @:to inline public function toValue():T {
+        return this.getter()();
+    }
+
+    inline public function setValue(newValue:T):Void {
+        return this.setter()(newValue);
+    }
+
+    inline public function getValue():Null<T> {
+        return this.getter()();
+    }
+
+    inline public function peek():T {
+        return this.peek();
+    }
+
+    inline public function isActive():Bool {
+        return this.isActive();
+    }
+
+// Subscribable methods
+
+    inline public function extend(source:Dynamic):Subscribable<T> {
+        return this.extend(source);
+    }
+
+    inline public function dispose():Void {
+        this.dispose();
+    }
+
+    inline public function getSubscriptionsCount():Int {
+        return this.getSubscriptionsCount();
+    }
+
+    inline public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription {
+        return this.subscribe(call, callbackTarget, event);
+    }
+}
+
+
 extern
-class DependentObservable<T> extends Subscribable<T>{
+class DependentObservableExtern<T> extends Subscribable<T>{
 
 public static var fn:Dynamic;
 public var value(get, set):T;
 
-inline private function setter():T -> Void untyped {
+inline function setter():T -> Void untyped {
     return this;
 }
 
-inline private function getter():Void -> T untyped {
+inline function getter():Void -> T untyped {
     return this;
-}
-
-inline public function set_value(newValue:T):T {
-    setter()(newValue);
-    return newValue;
-}
-
-inline public function get_value():Null<T> {
-    return getter()();
-}
-
-inline public function set(newValue:T):Void {
-    return setter()(newValue);
-}
-
-inline public function get():Null<T> {
-    return getter()();
 }
 
 public function peek():Null<T>;
@@ -38,6 +69,11 @@ public function isActive():Bool;
 
 }
 
+@:native("ko.dependentObservable.fn")
+extern
+class DependentObservableFn {
+
+}
 
 typedef DependentObservableOption<T> = {
 read:Void -> T,

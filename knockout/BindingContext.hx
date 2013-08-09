@@ -1,5 +1,6 @@
 package knockout;
 
+extern
 class BindingContext {
 
     public var parent(get_parent, null):Null<Dynamic>;

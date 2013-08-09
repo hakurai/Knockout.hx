@@ -11,11 +11,11 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>){
         this = observable;
     }
 
-    @:from static public inline function fromValue(?value:Either<Array<T>, T>) {
+    @:from static inline public function fromValue(?value:Either<Array<T>, T>) {
         return new ObservableArray(Knockout.observableArray(value));
     }
 
-    @:to public inline function toValue():Array<T> {
+    @:to inline public function toValue():Array<T> {
         return this.getter()();
     }
 

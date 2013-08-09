@@ -19,19 +19,19 @@ class Knockout {
 
     public static function observableArray<T>(?value:Either<Array<T>, T>):ObservableArrayExtern<T>;
 
-    public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>):DependentObservable<T>;
+    public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>):DependentObservableExtern<T>;
 
     public static function applyBindings(viewModel:Dynamic,?rootNode:js.html.Node):Void;
 }
 
-class BindingHandlerMap {
 
-    public inline function put(key:String, handler:BindingHandler):Void untyped {
-        this[key] = handler;
+abstract BindingHandlerMap({}){
+    @:arrayAccess public inline function arrayAccess(key:String):BindingHandler {
+        return Reflect.field(this, key);
     }
 
-    public inline function get(key:String):BindingHandler untyped {
-        return this[key];
+    @:arrayAccess public inline function arrayWrite(key:String, value:BindingHandler):Void {
+        Reflect.setField(this, key, value);
     }
 }
 
