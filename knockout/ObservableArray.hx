@@ -48,7 +48,7 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
     }
 
     inline public function slice(pos:Int, ?end:Int):Array<T> {
-        return this.slice(pos, end);
+        return if (end == null) this.slice(pos) else this.slice(pos, end);
     }
 
     inline public function remove(valueOrPredicate:Either<T -> Bool, T>):Array<T> {
@@ -56,7 +56,7 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
     }
 
     inline public function removeAll(?arrayOfValues:Array<T>):Array<T> {
-        return this.removeAll(arrayOfValues);
+        return if (arrayOfValues == null) this.removeAll() else this.removeAll(arrayOfValues);
     }
 
     inline public function indexOf(item:T):Int {
