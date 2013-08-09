@@ -1,4 +1,5 @@
 package test;
+import knockout.ObservableArray;
 import js.html.Node;
 import knockout.Utils;
 import knockout.Observable;
@@ -29,14 +30,20 @@ class Test {
             return 100;
         };
         
-        
+        var observable2 = Knockout.observable("test");
 
 //        observable.set("new text");
 
         var array1 = new Array<Int>();
         var array2 = new Array<Int>();
+        
+        var observableArray:ObservableArray<Int> = array1;
+        observableArray.push(10);
+        var pos = observableArray.indexOf(10);
+        
+        var inner:Array<Int> = observableArray;
 
-        Utils.arrayPushAll(array1, array2);
+        Utils.arrayPushAll(observableArray, array2);
 
         Knockout.bindingHandlers.put("myHandler", new MyHandler());
 

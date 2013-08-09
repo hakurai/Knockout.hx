@@ -42,7 +42,7 @@ abstract Observable<T>(ObservableExtern<T>){
         this.valueWillMutate();
     }
 
-    //Subscribable methods
+    // Subscribable methods
 
     inline public function extend(source:Dynamic):Subscribable<T>{
         return this.extend(source);
@@ -64,8 +64,6 @@ abstract Observable<T>(ObservableExtern<T>){
 
 extern
 class ObservableExtern<T> extends Subscribable<T> {
-
-public static var fn(default,null):Dynamic;
 
 inline function setter():T -> Subscription untyped {
     return this;
