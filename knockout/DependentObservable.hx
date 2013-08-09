@@ -1,7 +1,7 @@
 package knockout;
 import knockout.Subscribable;
 
-abstract DependentObservable<T>(DependentObservableExtern<T>){
+abstract DependentObservable<T>(DependentObservableExtern<T>) from DependentObservableExtern<T>{
 
     public static var fn:Dynamic = DependentObservableFn;
 

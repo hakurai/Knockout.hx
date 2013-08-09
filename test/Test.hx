@@ -1,4 +1,5 @@
 package test;
+import knockout.DependentObservable;
 import knockout.ObservableArray;
 import js.html.Node;
 import knockout.Utils;
@@ -40,27 +41,29 @@ class Test {
             return 100;
         };
 
-        var observable2 = Knockout.observable("test");
+        var observable2:Observable<String> = Knockout.observable("test");
     }
 
     public static function observableArray() {
-        var array1 = new Array<Int>();
+        var array1 = new Array<Float>();
 
-        var observableArray:ObservableArray<Int> = array1;
+        var observableArray:ObservableArray<Float> = array1;
         observableArray.push(10);
         var pos = observableArray.indexOf(10);
 
-        var inner:Array<Int> = observableArray;
+        var inner:Array<Float> = observableArray;
 
-        var array2 = new Array<Int>();
+        var array2 = new Array<Float>();
         Utils.arrayPushAll(observableArray, array2);
+        
+        observableArray = Knockout.observableArray(1);
 
     }
 
     public static function dependentObservable() {
         var observable:Observable<String> = "hello";
 
-        Knockout.computed(function() {
+        var computed:DependentObservable<String> = Knockout.computed(function() {
             return observable.getValue();
         });
     }

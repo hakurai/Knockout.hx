@@ -3,7 +3,7 @@ import Array;
 import knockout.Utils.Either;
 import knockout.Observable;
 
-abstract ObservableArray<T>(ObservableArrayExtern<T>){
+abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern<T>{
 
     public static var fn:Dynamic = ObservableArrayFn;
 
