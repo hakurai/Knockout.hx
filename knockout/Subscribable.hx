@@ -11,6 +11,6 @@ class Subscribable<T> {
 
     public function getSubscriptionsCount():Int;
 
-    public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Void;
+    public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription;
 
 }

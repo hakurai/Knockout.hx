@@ -1,6 +1,5 @@
 package knockout;
 
-import js.html.Element;
 class BindingContext {
 
     public var parent(get_parent, null):Null<Dynamic>;
@@ -10,7 +9,7 @@ class BindingContext {
     public var index(get_index, null):Null<Int>;
     public var parentContext(get_parentContext, null):Null<BindingContext>;
     public var context(get_context, null):BindingContext;
-    public var element(get_element, null):Element;
+    public var element(get_element, null):js.html.Node;
 
     private inline function get_parent():Null<Dynamic> untyped {
         return this["$parent"];

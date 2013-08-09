@@ -1,3 +1,4 @@
 -js bin/App.js
--dce full
-./knockout/*
+-cp knockout
+-cp test
+-main test.Test

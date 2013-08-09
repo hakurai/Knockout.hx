@@ -1,6 +1,5 @@
 package knockout;
 
-import js.html.Element;
 import knockout.DependentObservable;
 import knockout.ObservableArray;
 import knockout.Observable;
@@ -13,13 +12,13 @@ class Knockout {
 
     public static var bindingHandlers:BindingHandlerMap;
 
-    public static function observable<T>(?value:T):Observable<T>;
+    public static function observable<T>(?value:T):ObservableExtern<T>;
 
     public static function observableArray<T>(?value:Array<T>):ObservableArray<T>;
 
     public static function computed<T>(evaluatorFunctionOrOptions:Void -> T):DependentObservable<T>;
 
-    public static function applyBindings(viewModel:Dynamic,?rootNode:Element):Void;
+    public static function applyBindings(viewModel:Dynamic,?rootNode:js.html.Node):Void;
 }
 
 class BindingHandlerMap {
@@ -35,7 +34,7 @@ class BindingHandlerMap {
 
 
 typedef BindingHandler = {
-    function init(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    function init(element:js.html.Node, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 
-    function update(element:Element, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
+    function update(element:js.html.Node, valueAccessor:Void -> Dynamic, allBindingsAccessor:Void -> Dynamic, viewModel:Dynamic, bindingContext:BindingContext):Void;
 }

@@ -1,8 +1,7 @@
 package knockout;
 import knockout.Observable;
-@:native("ko.observableArray")
 extern
-class ObservableArray<T> extends Observable<Array<T>>{
+class ObservableArray<T> extends ObservableExtern<Array<T>>{
 
     public static var fn(default,null):Dynamic;
 
