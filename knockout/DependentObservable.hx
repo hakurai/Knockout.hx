@@ -13,11 +13,11 @@ abstract DependentObservable<T>(DependentObservableExtern<T>) from DependentObse
         return this.getter()();
     }
 
-    inline public function setValue(newValue:T):Void {
+    inline public function set(newValue:T):Void {
         return this.setter()(newValue);
     }
 
-    inline public function getValue():Null<T> {
+    inline public function get():Null<T> {
         return this.getter()();
     }
 

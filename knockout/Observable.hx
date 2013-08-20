@@ -10,23 +10,19 @@ abstract Observable<T>(ObservableExtern<T>) from ObservableExtern<T>{
         this = observable;
     }
 
-    @:from inline static public function fromValue(value:T) {
-        return new Observable(Knockout.observable(value));
-    }
-
     @:to inline public function toValue():T {
         return this.getter()();
     }
 
-    @:op(A << B) static inline public function set<T>(lhs:Observable<T>, rhs:T):Void {
-        lhs.setValue(rhs);
+    @:op(A << B) static inline public function setValue<T>(lhs:Observable<T>, rhs:T):Void {
+        lhs.set(rhs);
     }
 
-    inline public function setValue(newValue:T):Subscription {
+    inline public function set(newValue:T):Subscription {
         return this.setter()(newValue);
     }
 
-    inline public function getValue():T {
+    inline public function get():T {
         return this.getter()();
     }
 

@@ -11,10 +11,6 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
         this = observable;
     }
 
-    @:from static inline public function fromValue(?value:Either<Array<T>, T>) {
-        return new ObservableArray(Knockout.observableArray(value));
-    }
-
     @:to inline public function toValue():Array<T> {
         return this.getter()();
     }
@@ -39,6 +35,11 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
         this.sort(f);
     }
 
+    @:overload(function(pos:Int, len:Int, a1:T):Array<T>{})
+    @:overload(function(pos:Int, len:Int, a1:T, a2:T):Array<T>{})
+    @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T):Array<T>{})
+    @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T, a4:T):Array<T>{})
+    @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T, a4:T, a5:T):Array<T>{})
     inline public function splice(pos:Int, len:Int):Array<T> {
         return this.splice(pos, len);
     }
@@ -69,11 +70,11 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
 
 // Observable methods
 
-    inline public function setValue(newValue:Array<T>):Subscription {
+    inline public function set(newValue:Array<T>):Subscription {
         return this.setter()(newValue);
     }
 
-    inline public function getValue():Array<T> {
+    inline public function get():Array<T> {
         return this.getter()();
     }
 

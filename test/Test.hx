@@ -23,13 +23,13 @@ class Test {
     }
 
     public static function observable() {
-        var observable:Observable<String> = "hello";
+        var observable:Observable<String> = Knockout.observable("hello");
 
         observable << "good by";
 
         var value:String = observable;
         value = observable.peek();
-        value = observable.getValue();
+        value = observable.get();
         observable.valueWillMutate();
         observable.valueHasMutated();
 
@@ -47,7 +47,7 @@ class Test {
     public static function observableArray() {
         var array1 = new Array<Float>();
 
-        var observableArray:ObservableArray<Float> = array1;
+        var observableArray:ObservableArray<Float> = Knockout.observableArray(array1);
         observableArray.push(10);
         var pos = observableArray.indexOf(10);
 
@@ -61,10 +61,10 @@ class Test {
     }
 
     public static function dependentObservable() {
-        var observable:Observable<String> = "hello";
+        var observable:Observable<String> = Knockout.observable("hello");
 
         var computed:DependentObservable<String> = Knockout.computed(function() {
-            return observable.getValue();
+            return observable.get();
         });
     }
 
