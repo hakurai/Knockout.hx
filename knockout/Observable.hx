@@ -18,7 +18,7 @@ abstract Observable<T>(ObservableExtern<T>) from ObservableExtern<T>{
         lhs.set(rhs);
     }
 
-    inline public function set(newValue:T):Subscription {
+    inline public function set(newValue:T):Observable<T> {
         return this.setter()(newValue);
     }
 
@@ -61,7 +61,7 @@ abstract Observable<T>(ObservableExtern<T>) from ObservableExtern<T>{
 extern
 class ObservableExtern<T> extends Subscribable<T> {
 
-inline function setter():T -> Subscription untyped {
+inline function setter():T -> ObservableExtern<T> untyped {
     return this;
 }
 

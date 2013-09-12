@@ -70,7 +70,7 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
 
 // Observable methods
 
-    inline public function set(newValue:Array<T>):Subscription {
+    inline public function set(newValue:Array<T>):Observable<Array<T>> {
         return this.setter()(newValue);
     }
 
