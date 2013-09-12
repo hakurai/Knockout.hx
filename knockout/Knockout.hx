@@ -22,6 +22,12 @@ class Knockout {
     public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>):DependentObservableExtern<T>;
 
     public static function applyBindings(viewModel:Dynamic,?rootNode:js.html.Node):Void;
+
+    public static function unwrap<T>(value:ObservableExtern<T>):T;
+    
+    public static function isObservable<T>(instance:Dynamic):Bool;
+    
+    public static function isWriteableObservable<T>(instance:Dynamic):Bool;
 }
 
 
