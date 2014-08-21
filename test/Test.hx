@@ -56,7 +56,7 @@ class Test {
         var array2 = new Array<Float>();
         Utils.arrayPushAll(observableArray, array2);
         
-        observableArray = Knockout.observableArray(1);
+        observableArray = Knockout.observableArray(1.0);
 
     }
 
